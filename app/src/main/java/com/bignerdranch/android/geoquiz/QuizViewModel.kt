@@ -1,6 +1,5 @@
 package com.bignerdranch.android.geoquiz
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
@@ -21,13 +20,11 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     private var currentIndex: Int
         get() {
             val retVal = savedStateHandle.get<Int>(CURRENT_INDEX_KEY) ?: 0
-            Log.d(TAG, "Retrieved =  $retVal")
             return retVal
         }
 
         set(value) {
             savedStateHandle.set(CURRENT_INDEX_KEY, value)
-            Log.d(TAG, "Set to $value")
         }
 
     val currentQuestionAnswer: Boolean
